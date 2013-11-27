@@ -32,6 +32,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'twitter-bootstrap-rails',
+    github: 'seyhunak/twitter-bootstrap-rails',
+    branch: 'bootstrap3'
 
 group :test, :development do
    gem 'cucumber-rails', :require => false
