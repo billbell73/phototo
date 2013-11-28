@@ -1,0 +1,211 @@
+# Logfile created on 2013-11-28 13:59:51 +0000 by logger.rb/36483
+I [2013-11-28 13:59:51.525] [[32mChannel[0m] [photos] {"title"=>"Blah", "image_url"=>"/system/photos/pics/000/000/258/medium/peas.jpg?1385647190"}
+
+I [2013-11-28 14:00:55.550] [[32mConnectionManager[0m] Connection opened: #<Connection::2db65c8350faaf1bccd6>
+
+I [2013-11-28 14:00:55.581] [[32mChannel[0m] #<Connection::2db65c8350faaf1bccd6> subscribed to channel photos
+
+I [2013-11-28 14:01:16.277] [[32mChannel[0m] #<Connection::2db65c8350faaf1bccd6> unsubscribed from channel photos
+
+I [2013-11-28 14:01:16.277] [[32mConnectionManager[0m] Connection closed: #<Connection::2db65c8350faaf1bccd6>
+
+I [2013-11-28 14:01:16.436] [[32mConnectionManager[0m] Connection opened: #<Connection::789b1be38504b457774d>
+
+I [2013-11-28 14:01:16.459] [[32mChannel[0m] #<Connection::789b1be38504b457774d> subscribed to channel photos
+
+I [2013-11-28 14:01:32.453] [[32mConnectionManager[0m] Connection opened: #<Connection::d66075fac59d663f88c9>
+
+I [2013-11-28 14:01:32.518] [[32mChannel[0m] #<Connection::d66075fac59d663f88c9> subscribed to channel photos
+
+I [2013-11-28 14:01:44.102] [[32mChannel[0m] #<Connection::d66075fac59d663f88c9> unsubscribed from channel photos
+
+I [2013-11-28 14:01:44.102] [[32mConnectionManager[0m] Connection closed: #<Connection::d66075fac59d663f88c9>
+
+I [2013-11-28 14:01:44.279] [[32mConnectionManager[0m] Connection opened: #<Connection::f51b565558e56165686d>
+
+I [2013-11-28 14:01:44.288] [[32mChannel[0m] #<Connection::f51b565558e56165686d> subscribed to channel photos
+
+I [2013-11-28 14:02:04.666] [[32mChannel[0m] #<Connection::789b1be38504b457774d> unsubscribed from channel photos
+
+I [2013-11-28 14:02:04.666] [[32mConnectionManager[0m] Connection closed: #<Connection::789b1be38504b457774d>
+
+I [2013-11-28 14:02:04.882] [[32mConnectionManager[0m] Connection opened: #<Connection::fe9d2833a2d1d3255dc2>
+
+I [2013-11-28 14:02:04.894] [[32mChannel[0m] #<Connection::fe9d2833a2d1d3255dc2> subscribed to channel photos
+
+I [2013-11-28 14:02:22.137] [[32mChannel[0m] #<Connection::fe9d2833a2d1d3255dc2> unsubscribed from channel photos
+
+I [2013-11-28 14:02:22.137] [[32mConnectionManager[0m] Connection closed: #<Connection::fe9d2833a2d1d3255dc2>
+
+I [2013-11-28 14:02:22.357] [[32mConnectionManager[0m] Connection opened: #<Connection::dd85a3476195f2645df5>
+
+I [2013-11-28 14:02:22.417] [[32mChannel[0m] #<Connection::dd85a3476195f2645df5> subscribed to channel photos
+
+I [2013-11-28 14:02:35.911] [[32mChannel[0m] #<Connection::dd85a3476195f2645df5> unsubscribed from channel photos
+
+I [2013-11-28 14:02:35.912] [[32mConnectionManager[0m] Connection closed: #<Connection::dd85a3476195f2645df5>
+
+I [2013-11-28 14:02:36.208] [[32mConnectionManager[0m] Connection opened: #<Connection::5985cc8d0349a57e9a50>
+
+I [2013-11-28 14:02:36.224] [[32mChannel[0m] #<Connection::5985cc8d0349a57e9a50> subscribed to channel photos
+
+I [2013-11-28 14:03:52.345] [[32mChannel[0m] [photos] {"title"=>"H C", "image_url"=>"/system/photos/pics/000/000/007/medium/2013-09-14_17.47.18.jpg?1385647431"}
+
+I [2013-11-28 14:03:52.457] [[32mChannel[0m] #<Connection::5985cc8d0349a57e9a50> unsubscribed from channel photos
+
+I [2013-11-28 14:03:52.457] [[32mConnectionManager[0m] Connection closed: #<Connection::5985cc8d0349a57e9a50>
+
+I [2013-11-28 14:03:52.785] [[32mConnectionManager[0m] Connection opened: #<Connection::f4a051388ae3213f1283>
+
+I [2013-11-28 14:03:52.805] [[32mChannel[0m] #<Connection::f4a051388ae3213f1283> subscribed to channel photos
+
+I [2013-11-28 14:04:19.875] [[32mChannel[0m] #<Connection::f51b565558e56165686d> unsubscribed from channel photos
+
+I [2013-11-28 14:04:19.875] [[32mConnectionManager[0m] Connection closed: #<Connection::f51b565558e56165686d>
+
+I [2013-11-28 14:04:20.153] [[32mConnectionManager[0m] Connection opened: #<Connection::25655b923ffa746f574e>
+
+I [2013-11-28 14:04:20.176] [[32mChannel[0m] #<Connection::25655b923ffa746f574e> subscribed to channel photos
+
+I [2013-11-28 14:07:03.506] [[32mChannel[0m] #<Connection::f4a051388ae3213f1283> unsubscribed from channel photos
+
+I [2013-11-28 14:07:03.508] [[32mConnectionManager[0m] Connection closed: #<Connection::f4a051388ae3213f1283>
+
+I [2013-11-28 14:07:03.304] [[32mConnectionManager[0m] Connection opened: #<Connection::ed4bc088ee935d624255>
+
+I [2013-11-28 14:07:03.327] [[32mChannel[0m] #<Connection::ed4bc088ee935d624255> subscribed to channel photos
+
+I [2013-11-28 14:07:21.793] [[32mChannel[0m] [photos] {"title"=>"hello", "image_url"=>"/system/photos/pics/000/000/008/medium/2013-08-26_13.45.29.jpg?1385647640"}
+
+I [2013-11-28 14:07:21.943] [[32mChannel[0m] #<Connection::ed4bc088ee935d624255> unsubscribed from channel photos
+
+I [2013-11-28 14:07:21.944] [[32mConnectionManager[0m] Connection closed: #<Connection::ed4bc088ee935d624255>
+
+I [2013-11-28 14:07:22.238] [[32mConnectionManager[0m] Connection opened: #<Connection::03a6f402483672e3a55e>
+
+I [2013-11-28 14:07:22.258] [[32mChannel[0m] #<Connection::03a6f402483672e3a55e> subscribed to channel photos
+
+I [2013-11-28 14:08:28.789] [[32mChannel[0m] #<Connection::03a6f402483672e3a55e> unsubscribed from channel photos
+
+I [2013-11-28 14:08:28.789] [[32mConnectionManager[0m] Connection closed: #<Connection::03a6f402483672e3a55e>
+
+I [2013-11-28 14:08:29.217] [[32mConnectionManager[0m] Connection opened: #<Connection::eafdbbdcb5c9d119b7b0>
+
+I [2013-11-28 14:08:29.754] [[32mChannel[0m] #<Connection::eafdbbdcb5c9d119b7b0> subscribed to channel photos
+
+I [2013-11-28 14:08:35.775] [[32mChannel[0m] [photos] {"title"=>"hello again", "image_url"=>"/system/photos/pics/000/000/009/medium/2013-08-26_13.45.29.jpg?1385647714"}
+
+I [2013-11-28 14:08:36.727] [[32mChannel[0m] #<Connection::eafdbbdcb5c9d119b7b0> unsubscribed from channel photos
+
+I [2013-11-28 14:08:36.729] [[32mConnectionManager[0m] Connection closed: #<Connection::eafdbbdcb5c9d119b7b0>
+
+I [2013-11-28 14:08:36.415] [[32mConnectionManager[0m] Connection opened: #<Connection::8e097795d58b77ed1ac6>
+
+I [2013-11-28 14:08:36.557] [[32mChannel[0m] #<Connection::8e097795d58b77ed1ac6> subscribed to channel photos
+
+I [2013-11-28 14:08:38.297] [[32mChannel[0m] #<Connection::25655b923ffa746f574e> unsubscribed from channel photos
+
+I [2013-11-28 14:08:38.298] [[32mConnectionManager[0m] Connection closed: #<Connection::25655b923ffa746f574e>
+
+I [2013-11-28 14:08:38.739] [[32mConnectionManager[0m] Connection opened: #<Connection::50aa48e7f9f4cd3213d0>
+
+I [2013-11-28 14:08:38.790] [[32mChannel[0m] #<Connection::50aa48e7f9f4cd3213d0> subscribed to channel photos
+
+I [2013-11-28 14:08:39.861] [[32mChannel[0m] #<Connection::8e097795d58b77ed1ac6> unsubscribed from channel photos
+
+I [2013-11-28 14:08:39.861] [[32mConnectionManager[0m] Connection closed: #<Connection::8e097795d58b77ed1ac6>
+
+I [2013-11-28 14:08:40.180] [[32mConnectionManager[0m] Connection opened: #<Connection::82a2a4f462b0cc51fb95>
+
+I [2013-11-28 14:08:40.233] [[32mChannel[0m] #<Connection::82a2a4f462b0cc51fb95> subscribed to channel photos
+
+I [2013-11-28 14:08:44.146] [[32mChannel[0m] [photos] {"title"=>"hello again2", "image_url"=>"/system/photos/pics/000/000/010/medium/2013-08-26_13.45.29.jpg?1385647723"}
+
+I [2013-11-28 14:08:44.285] [[32mChannel[0m] #<Connection::82a2a4f462b0cc51fb95> unsubscribed from channel photos
+
+I [2013-11-28 14:08:44.289] [[32mConnectionManager[0m] Connection closed: #<Connection::82a2a4f462b0cc51fb95>
+
+I [2013-11-28 14:08:44.716] [[32mConnectionManager[0m] Connection opened: #<Connection::bc88c67da47987dbafeb>
+
+I [2013-11-28 14:08:44.742] [[32mChannel[0m] #<Connection::bc88c67da47987dbafeb> subscribed to channel photos
+
+I [2013-11-28 14:09:36.148] [[32mChannel[0m] #<Connection::50aa48e7f9f4cd3213d0> unsubscribed from channel photos
+
+I [2013-11-28 14:09:36.149] [[32mConnectionManager[0m] Connection closed: #<Connection::50aa48e7f9f4cd3213d0>
+
+I [2013-11-28 14:09:36.533] [[32mConnectionManager[0m] Connection opened: #<Connection::2c0190643291e2af6d4d>
+
+I [2013-11-28 14:09:36.670] [[32mChannel[0m] #<Connection::2c0190643291e2af6d4d> subscribed to channel photos
+
+I [2013-11-28 14:09:45.763] [[32mChannel[0m] #<Connection::bc88c67da47987dbafeb> unsubscribed from channel photos
+
+I [2013-11-28 14:09:45.763] [[32mConnectionManager[0m] Connection closed: #<Connection::bc88c67da47987dbafeb>
+
+I [2013-11-28 14:09:45.994] [[32mConnectionManager[0m] Connection opened: #<Connection::e572fde359b215c56b47>
+
+I [2013-11-28 14:09:46.540] [[32mChannel[0m] #<Connection::e572fde359b215c56b47> subscribed to channel photos
+
+I [2013-11-28 14:09:55.793] [[32mChannel[0m] [photos] {"caption"=>"hello again!!!", "image_url"=>"/system/photos/pics/000/000/011/thumb/2013-08-31_13.30.05.jpg?1385647794"}
+
+I [2013-11-28 14:09:55.987] [[32mChannel[0m] #<Connection::e572fde359b215c56b47> unsubscribed from channel photos
+
+I [2013-11-28 14:09:55.987] [[32mConnectionManager[0m] Connection closed: #<Connection::e572fde359b215c56b47>
+
+I [2013-11-28 14:09:56.298] [[32mConnectionManager[0m] Connection opened: #<Connection::61fb657850777849f43f>
+
+I [2013-11-28 14:09:56.324] [[32mChannel[0m] #<Connection::61fb657850777849f43f> subscribed to channel photos
+
+I [2013-11-28 14:10:46.548] [[32mChannel[0m] #<Connection::2c0190643291e2af6d4d> unsubscribed from channel photos
+
+I [2013-11-28 14:10:46.548] [[32mConnectionManager[0m] Connection closed: #<Connection::2c0190643291e2af6d4d>
+
+I [2013-11-28 14:10:46.907] [[32mConnectionManager[0m] Connection opened: #<Connection::f3adf1327a5289f3ae42>
+
+I [2013-11-28 14:10:46.998] [[32mChannel[0m] #<Connection::f3adf1327a5289f3ae42> subscribed to channel photos
+
+I [2013-11-28 14:10:51.449] [[32mChannel[0m] #<Connection::61fb657850777849f43f> unsubscribed from channel photos
+
+I [2013-11-28 14:10:51.449] [[32mConnectionManager[0m] Connection closed: #<Connection::61fb657850777849f43f>
+
+I [2013-11-28 14:10:51.692] [[32mConnectionManager[0m] Connection opened: #<Connection::afca4433c930b328ad65>
+
+I [2013-11-28 14:10:51.756] [[32mChannel[0m] #<Connection::afca4433c930b328ad65> subscribed to channel photos
+
+I [2013-11-28 14:10:55.791] [[32mChannel[0m] [photos] #<Photo id: 12, caption: "hello agai2n!!!", user_id: 1, pic_file_name: "2013-08-31_13.30.05.jpg", pic_content_type: "image/jpeg", pic_file_size: 1013278, pic_updated_at: "2013-11-28 14:10:54">
+
+I [2013-11-28 14:10:55.265] [[32mChannel[0m] #<Connection::afca4433c930b328ad65> unsubscribed from channel photos
+
+I [2013-11-28 14:10:55.266] [[32mConnectionManager[0m] Connection closed: #<Connection::afca4433c930b328ad65>
+
+I [2013-11-28 14:10:55.545] [[32mConnectionManager[0m] Connection opened: #<Connection::5090431cee3c9a6354f3>
+
+I [2013-11-28 14:10:55.560] [[32mChannel[0m] #<Connection::5090431cee3c9a6354f3> subscribed to channel photos
+
+I [2013-11-28 14:10:57.809] [[32mChannel[0m] #<Connection::f3adf1327a5289f3ae42> unsubscribed from channel photos
+
+I [2013-11-28 14:10:57.809] [[32mConnectionManager[0m] Connection closed: #<Connection::f3adf1327a5289f3ae42>
+
+I [2013-11-28 14:10:58.177] [[32mConnectionManager[0m] Connection opened: #<Connection::d8a4ea8d5216bc1e1af0>
+
+I [2013-11-28 14:10:58.208] [[32mChannel[0m] #<Connection::d8a4ea8d5216bc1e1af0> subscribed to channel photos
+
+I [2013-11-28 14:10:58.978] [[32mChannel[0m] #<Connection::5090431cee3c9a6354f3> unsubscribed from channel photos
+
+I [2013-11-28 14:10:58.978] [[32mConnectionManager[0m] Connection closed: #<Connection::5090431cee3c9a6354f3>
+
+I [2013-11-28 14:10:59.254] [[32mConnectionManager[0m] Connection opened: #<Connection::7e060803685fb9fae408>
+
+I [2013-11-28 14:10:59.294] [[32mChannel[0m] #<Connection::7e060803685fb9fae408> subscribed to channel photos
+
+I [2013-11-28 14:11:01.787] [[32mChannel[0m] [photos] #<Photo id: 13, caption: "hello agai2n!!!", user_id: 1, pic_file_name: "2013-08-31_13.30.05.jpg", pic_content_type: "image/jpeg", pic_file_size: 1013278, pic_updated_at: "2013-11-28 14:11:00">
+
+I [2013-11-28 14:11:01.936] [[32mChannel[0m] #<Connection::7e060803685fb9fae408> unsubscribed from channel photos
+
+I [2013-11-28 14:11:01.936] [[32mConnectionManager[0m] Connection closed: #<Connection::7e060803685fb9fae408>
+
+I [2013-11-28 14:11:02.293] [[32mConnectionManager[0m] Connection opened: #<Connection::753a8623a337bb1b8ec1>
+
+I [2013-11-28 14:11:02.332] [[32mChannel[0m] #<Connection::753a8623a337bb1b8ec1> subscribed to channel photos
+
+I [2013-11-28 16:25:48.154] [[32mChannel[0m] [photos] #<Photo id: 264, caption: "Blah", user_id: 442, pic_file_name: "peas.jpg", pic_content_type: "image/jpeg", pic_file_size: 743966, pic_updated_at: "2013-11-28 16:25:47">
+
