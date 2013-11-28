@@ -11,9 +11,7 @@ When I am on the homepage
 Then I should see a photo
 
 Scenario: posting/uploading photos
-Given I am a new, authenticated user with email "willbell@gmail.com" and password "qwertyui"
-And I am on the homepage
-And I follow "Upload photo"
+Given I am logged in and on the upload photo form
 And I fill in "Caption" with "Blah"
 And I attach the "peas.jpg" file
 And I press "Create Photo"

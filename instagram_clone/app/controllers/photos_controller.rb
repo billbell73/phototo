@@ -12,10 +12,12 @@ class PhotosController < ApplicationController
 
 	def create
 		#raise params.inspect
-		@photo = current_user.photos.build(params[:photo].permit(:caption, :pic))
+		@photo = current_user.photos.build(params[:photo].permit(:caption, :pic, :tag_names))
 
     if @photo.save
       flash[:notice] = 'Photo added'
+      # WebsocketRails[:photos].trigger 'new',
+      #               { title: @photo.caption, image_url: @photo.image.url(:medium) }
       redirect_to photos_path
     else
       render 'new'

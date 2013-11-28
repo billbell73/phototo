@@ -1,0 +1,14 @@
+<h1><%= @tag.content %></h1>
+
+<div class='row'>
+  <% @tag.photos.each do |photo| %>
+    <div class='col-md-4'>
+      <h3><%= photo.caption %></h3>
+      <%= image_tag photo.pic.url(:thumb), class: 'uploaded-pic' %>
+      <caption>Uploaded by <%= photo.user.email if photo.user %></caption>
+      <p>Tags:
+        <%= tag_names(photo) %>
+      </p>
+    </div>
+  <% end %>
+</div>

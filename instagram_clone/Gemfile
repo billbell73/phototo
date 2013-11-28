@@ -49,6 +49,8 @@ group :test, :development do
    gem "factory_girl_rails"
    gem "paperclip", "~> 3.0"
    gem 'selenium-webdriver'
+   gem 'websocket-rails'
+   gem 'thin'
 end
 
 # Use ActiveModel has_secure_password

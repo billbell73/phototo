@@ -5,5 +5,13 @@
   <%= image_tag photo.pic.url(:thumb), class: 'uploaded-pic' %>
   <br>
   <caption>Uploaded by <%= photo.user.email if photo.user %></caption>
+  <br>
+  	Tags:
+      <%= tag_names(photo) %>
+  
+  <br>
+  
+  <%= link_to 'Add Tags', new_photo_tag_path(photo) %>
+
 </div>
 

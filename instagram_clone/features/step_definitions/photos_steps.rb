@@ -1,10 +1,21 @@
 Given(/^that there is a photo with caption "(.*?)"$/) do |caption|
-  Photo.new(:caption => caption, :user_id => 1).save!
+  Photo.new(:caption => caption, user: create(:user)).save!
 end
 
 Given(/^that there is a photo that has been uploaded$/) do
   pic = File.open(Rails.root.join('features/images/peas.jpg'))
-  Photo.new(:caption => 'heavens', :user_id => 1, :pic => pic).save!
+  @user = create(:user)
+  Photo.new(:caption => 'heavens', user: @user, :pic => pic).save!
+end
+
+Then(/^I should see (\d+) photos?$/) do |number|
+  # pic = page.find 'img.uploaded-pic'
+ 	# expect(pic['alt']).not_to eq 'Missing'
+ 	expect(page).to have_css 'img.uploaded-pic', count: number
+end
+
+Given(/^I attach the "(.*?)" file$/) do |filename|
+  attach_file 'Pic', Rails.root.join("features/images/#{filename}")
 end
 
 Then(/^I should see a photo$/) do
@@ -12,6 +23,7 @@ Then(/^I should see a photo$/) do
  	expect(pic['alt']).not_to eq 'Missing'
 end
 
-Given(/^I attach the "(.*?)" file$/) do |filename|
-  attach_file 'Pic', Rails.root.join("features/images/#{filename}")
+Given(/^I am logged in and on the upload photo form$/) do
+  login_as(create(:user), :scope => :user)
+  visit('/photos/new')
 end

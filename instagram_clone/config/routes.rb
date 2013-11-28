@@ -1,4 +1,6 @@
 InstagramClone::Application.routes.draw do
+  resources :tags
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -18,8 +20,15 @@ InstagramClone::Application.routes.draw do
   #   resources :products
 
   
-  resources :photos
+  # resources :photos
+
+  resources :photos do
+    resources :tags
+  end
   
+  # resources :tags do
+  #   resources :photos
+  # end
 
   # Example resource route with options:
   #   resources :products do
