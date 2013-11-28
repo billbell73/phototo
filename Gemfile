@@ -27,6 +27,12 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'devise'
+gem "paperclip", "~> 3.0"
+gem 'websocket-rails'
+gem 'thin'
+gem 'aws-sdk'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -44,14 +50,9 @@ group :test, :development do
    gem 'shoulda-matchers'
    gem 'poltergeist'
    # gem 'simplecov', :require => false, :group => :test
-   gem 'devise'
    gem 'launchy'
    gem "factory_girl_rails"
-   gem "paperclip", "~> 3.0"
    gem 'selenium-webdriver'
-   gem 'websocket-rails'
-   gem 'thin'
-   gem 'aws-sdk'
 end
 
 group :production do
