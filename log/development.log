@@ -14434,3 +14434,3047 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-28 14:11:02
 
 Started GET "/websocket" for 127.0.0.1 at 2013-11-28 14:11:02 +0000
   [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddSlugToTags (20131129103422)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (14.3ms)[0m  [1mALTER TABLE "tags" ADD COLUMN "slug" character varying(255)[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131129103422"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.7ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 9]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (145.2ms)
+  Rendered photos/index.html.erb within layouts/application (166.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 428ms (Views: 388.2ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:25 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:26 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:26 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:26 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:19:26 +0000
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/tags/29" for 127.0.0.1 at 2013-11-29 11:19:29 +0000
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", "29"]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."slug" = '29' LIMIT 1
+  Rendered tags/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `content' for nil:NilClass):
+    1: <h1><%= @tag.content %></h1>
+    2: 
+    3: <div class='row'>
+    4:   <% @tag.photos.each do |photo| %>
+  app/views/tags/show.html.erb:1:in `_app_views_tags_show_html_erb___1595071411388401044_70137539086540'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.0ms)
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:19:44 +0000
+  [1m[36mUser Load (54.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/photos/5/tags/new" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+Processing by TagsController#new as HTML
+  Parameters: {"photo_id"=>"5"}
+  [1m[35mPhoto Load (0.6ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1  [["id", "5"]]
+  Rendered tags/_form.html.erb (15.7ms)
+  Rendered tags/new.html.erb within layouts/application (17.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 60ms (Views: 57.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:49 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:19:50 +0000
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started POST "/photos/5/tags" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s5D6CHMBXqnwqdzgp9K7HbLS+9AMWS9w1FS2cIOVEPo=", "tag"=>{"tag_names"=>"zoo"}, "commit"=>"Create Tag", "photo_id"=>"5"}
+  [1m[36mPhoto Load (0.5ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1[0m  [["id", "5"]]
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."content" = 'zoo' AND "tags"."slug" = 'zoo' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "tags" ("content", "created_at", "slug", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "zoo"], ["created_at", Fri, 29 Nov 2013 11:19:56 UTC +00:00], ["slug", "zoo"], ["updated_at", Fri, 29 Nov 2013 11:19:56 UTC +00:00]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "photos_tags" ("photo_id", "tag_id") VALUES (5, 33)[0m
+  [1m[35m (5.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 15.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (48.3ms)
+  Rendered photos/index.html.erb within layouts/application (50.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 87ms (Views: 80.1ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:19:56 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/tags/33" for 127.0.0.1 at 2013-11-29 11:20:03 +0000
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", "33"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."slug" = '33' LIMIT 1[0m
+  Rendered tags/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `content' for nil:NilClass):
+    1: <h1><%= @tag.content %></h1>
+    2: 
+    3: <div class='row'>
+    4:   <% @tag.photos.each do |photo| %>
+  app/views/tags/show.html.erb:1:in `_app_views_tags_show_html_erb___1595071411388401044_70137539086540'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.8ms)
+
+
+Started GET "/tags/33" for 127.0.0.1 at 2013-11-29 11:21:29 +0000
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", "33"]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."slug" = '33' LIMIT 1[0m
+  Rendered tags/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `content' for nil:NilClass):
+    1: <h1><%= @tag.content %></h1>
+    2: 
+    3: <div class='row'>
+    4:   <% @tag.photos.each do |photo| %>
+  app/views/tags/show.html.erb:1:in `_app_views_tags_show_html_erb___1595071411388401044_70137539086540'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.4ms)
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:21:31 +0000
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/tags/33" for 127.0.0.1 at 2013-11-29 11:22:35 +0000
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", "33"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."slug" = '33' LIMIT 1
+  Rendered tags/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `content' for nil:NilClass):
+    1: <h1><%= @tag.content %></h1>
+    2: 
+    3: <div class='row'>
+    4:   <% @tag.photos.each do |photo| %>
+  app/views/tags/show.html.erb:1:in `_app_views_tags_show_html_erb___1595071411388401044_70137539086540'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.1ms)
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:22:41 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 11:28:26 +0000
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 1]]
+  Rendered photos/_photo.html.erb (33.8ms)
+  Rendered photos/index.html.erb within layouts/application (85.8ms)
+Completed 500 Internal Server Error in 92ms
+
+ActionView::Template::Error (No route matches {:id=>#<Tag id: 28, content: "I", created_at: "2013-11-28 10:58:44", updated_at: "2013-11-28 10:58:44", slug: nil>} missing required keys: [:id]):
+     7:   <caption>Uploaded by <%= photo.user.email if photo.user %></caption>
+     8:   <br>
+     9:   	Tags:
+    10:       <%= tag_names(photo) %>
+    11:   
+    12:   <br>
+    13:   
+  app/helpers/photos_helper.rb:9:in `block in tag_names'
+  app/helpers/photos_helper.rb:8:in `tag_names'
+  app/views/photos/_photo.html.erb:10:in `_app_views_photos__photo_html_erb__3221661275999400901_70137535602100'
+  app/views/photos/index.html.erb:3:in `_app_views_photos_index_html_erb___1353484852121240624_70137534894720'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 11:28:34 +0000
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+  Rendered photos/_photo.html.erb (5.6ms)
+  Rendered photos/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (No route matches {:id=>#<Tag id: 28, content: "I", created_at: "2013-11-28 10:58:44", updated_at: "2013-11-28 10:58:44", slug: nil>} missing required keys: [:id]):
+     7:   <caption>Uploaded by <%= photo.user.email if photo.user %></caption>
+     8:   <br>
+     9:   	Tags:
+    10:       <%= tag_names(photo) %>
+    11:   
+    12:   <br>
+    13:   
+  app/helpers/photos_helper.rb:9:in `block in tag_names'
+  app/helpers/photos_helper.rb:8:in `tag_names'
+  app/views/photos/_photo.html.erb:10:in `_app_views_photos__photo_html_erb__3221661275999400901_70137535602100'
+  app/views/photos/index.html.erb:3:in `_app_views_photos_index_html_erb___1353484852121240624_70137534894720'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 11:37:30 +0000
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 1]]
+  Rendered photos/_photo.html.erb (34.5ms)
+  Rendered photos/index.html.erb within layouts/application (44.5ms)
+Completed 500 Internal Server Error in 51ms
+
+ActionView::Template::Error (No route matches {:id=>#<Tag id: 28, content: "I", created_at: "2013-11-28 10:58:44", updated_at: "2013-11-28 10:58:44", slug: nil>} missing required keys: [:id]):
+     7:   <caption>Uploaded by <%= photo.user.email if photo.user %></caption>
+     8:   <br>
+     9:   	Tags:
+    10:       <%= tag_names(photo) %>
+    11:   
+    12:   <br>
+    13:   
+  app/helpers/photos_helper.rb:9:in `block in tag_names'
+  app/helpers/photos_helper.rb:8:in `tag_names'
+  app/views/photos/_photo.html.erb:10:in `_app_views_photos__photo_html_erb__3221661275999400901_70137535602100'
+  app/views/photos/index.html.erb:3:in `_app_views_photos_index_html_erb___1353484852121240624_70137534894720'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.0ms)
+  [1m[36mTag Load (2.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  [1m[35mSQL (2.7ms)[0m  DELETE FROM "tags"
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 11:38:38 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.6ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 11]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (137.0ms)
+  Rendered photos/index.html.erb within layouts/application (156.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 407ms (Views: 370.1ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:38:39 +0000
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/photos/2/tags/new" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+Processing by TagsController#new as HTML
+  Parameters: {"photo_id"=>"2"}
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered tags/_form.html.erb (68.9ms)
+  Rendered tags/new.html.erb within layouts/application (70.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 107ms (Views: 103.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:43 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:44 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:44 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:44 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:44 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:44 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:44 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:44 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:38:44 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started POST "/photos/2/tags" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s5D6CHMBXqnwqdzgp9K7HbLS+9AMWS9w1FS2cIOVEPo=", "tag"=>{"tag_names"=>"new"}, "commit"=>"Create Tag", "photo_id"=>"2"}
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."content" = 'new' AND "tags"."slug" = 'new' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "tags" ("content", "created_at", "slug", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "new"], ["created_at", Fri, 29 Nov 2013 11:38:48 UTC +00:00], ["slug", "new"], ["updated_at", Fri, 29 Nov 2013 11:38:48 UTC +00:00]]
+  [1m[35m (6.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "photos_tags" ("photo_id", "tag_id") VALUES (2, 34)
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (54.1ms)
+  Rendered photos/index.html.erb within layouts/application (56.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 146ms (Views: 138.1ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:38:48 +0000
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/tags/new" for 127.0.0.1 at 2013-11-29 11:38:51 +0000
+Processing by TagsController#new as HTML
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Photo without an ID):
+  app/controllers/tags_controller.rb:20:in `new'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.3ms)
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:39:06 +0000
+  [1m[36mUser Load (56.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/photos/3/tags/new" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+Processing by TagsController#new as HTML
+  Parameters: {"photo_id"=>"3"}
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1  [["id", "3"]]
+  Rendered tags/_form.html.erb (2.2ms)
+  Rendered tags/new.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:39:20 +0000
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started POST "/photos/3/tags" for 127.0.0.1 at 2013-11-29 11:39:27 +0000
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s5D6CHMBXqnwqdzgp9K7HbLS+9AMWS9w1FS2cIOVEPo=", "tag"=>{"tag_names"=>"zoom"}, "commit"=>"Create Tag", "photo_id"=>"3"}
+  [1m[36mPhoto Load (0.6ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."content" = 'zoom' AND "tags"."slug" = 'zoom' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tags" ("content", "created_at", "slug", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "zoom"], ["created_at", Fri, 29 Nov 2013 11:39:27 UTC +00:00], ["slug", "zoom"], ["updated_at", Fri, 29 Nov 2013 11:39:27 UTC +00:00]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "photos_tags" ("photo_id", "tag_id") VALUES (3, 35)[0m
+  [1m[35m (5.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 11:39:27 +0000
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (95.1ms)
+  Rendered photos/index.html.erb within layouts/application (97.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 131ms (Views: 124.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:39:28 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/photos/2/tags/new" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+Processing by TagsController#new as HTML
+  Parameters: {"photo_id"=>"2"}
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered tags/_form.html.erb (2.7ms)
+  Rendered tags/new.html.erb within layouts/application (3.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:39:33 +0000
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started POST "/photos/2/tags" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s5D6CHMBXqnwqdzgp9K7HbLS+9AMWS9w1FS2cIOVEPo=", "tag"=>{"tag_names"=>"zoom"}, "commit"=>"Create Tag", "photo_id"=>"2"}
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."content" = 'zoom' AND "tags"."slug" = 'zoom' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "photos_tags" ("photo_id", "tag_id") VALUES (2, 35)
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (47.9ms)
+  Rendered photos/index.html.erb within layouts/application (50.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 135ms (Views: 128.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:39:37 +0000
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/tags/zoom" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"zoom"}
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."slug" = 'zoom' LIMIT 1[0m
+  [1m[35mPhoto Load (0.7ms)[0m  SELECT "photos".* FROM "photos" INNER JOIN "photos_tags" ON "photos"."id" = "photos_tags"."photo_id" WHERE "photos_tags"."tag_id" = $1  [["tag_id", 35]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 2]]
+  Rendered tags/show.html.erb within layouts/application (16.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 52ms (Views: 48.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:39:39 +0000
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:39:52 +0000
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/tags/new" for 127.0.0.1 at 2013-11-29 11:39:54 +0000
+Processing by TagsController#new as HTML
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Photo without an ID):
+  app/controllers/tags_controller.rb:20:in `new'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.8ms)
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:39:57 +0000
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/photos/3/tags/new" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+Processing by TagsController#new as HTML
+  Parameters: {"photo_id"=>"3"}
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  Rendered tags/_form.html.erb (2.3ms)
+  Rendered tags/new.html.erb within layouts/application (3.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:40:00 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started POST "/photos/3/tags" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s5D6CHMBXqnwqdzgp9K7HbLS+9AMWS9w1FS2cIOVEPo=", "tag"=>{"tag_names"=>"wowsers!"}, "commit"=>"Create Tag", "photo_id"=>"3"}
+  [1m[35mPhoto Load (0.3ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."content" = 'wowsers!' AND "tags"."slug" = 'wowsers!' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "tags" ("content", "created_at", "slug", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "wowsers!"], ["created_at", Fri, 29 Nov 2013 11:40:06 UTC +00:00], ["slug", "wowsers!"], ["updated_at", Fri, 29 Nov 2013 11:40:06 UTC +00:00]]
+  [1m[35m (6.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "photos_tags" ("photo_id", "tag_id") VALUES (3, 36)
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.3ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (50.5ms)
+  Rendered photos/index.html.erb within layouts/application (52.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 90ms (Views: 83.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:40:06 +0000
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/tags/wowsers!" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"wowsers!"}
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."slug" = 'wowsers!' LIMIT 1[0m
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos" INNER JOIN "photos_tags" ON "photos"."id" = "photos_tags"."photo_id" WHERE "photos_tags"."tag_id" = $1  [["tag_id", 36]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  Rendered tags/show.html.erb within layouts/application (6.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 98ms (Views: 94.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:40:09 +0000
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:40:13 +0000
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/tags/new" for 127.0.0.1 at 2013-11-29 11:42:42 +0000
+Processing by TagsController#new as HTML
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Photo without an ID):
+  app/controllers/tags_controller.rb:20:in `new'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.0ms)
+
+
+Started GET "/tags/new" for 127.0.0.1 at 2013-11-29 11:59:22 +0000
+Processing by TagsController#new as HTML
+Completed 404 Not Found in 10ms
+
+ActiveRecord::RecordNotFound (Couldn't find Photo without an ID):
+  app/controllers/tags_controller.rb:24:in `new'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.4ms)
+
+
+Started GET "/tags/new" for 127.0.0.1 at 2013-11-29 11:59:29 +0000
+Processing by TagsController#new as HTML
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Photo without an ID):
+  app/controllers/tags_controller.rb:24:in `new'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.7ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (72.3ms)
+  Rendered photos/index.html.erb within layouts/application (85.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 167ms (Views: 155.9ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 11:59:39 +0000
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/tags/zoom" for 127.0.0.1 at 2013-11-29 11:59:43 +0000
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"zoom"}
+Completed 500 Internal Server Error in 1ms
+
+RuntimeError ({"action"=>"show", "controller"=>"tags", "id"=>"zoom"}):
+  app/controllers/tags_controller.rb:13:in `show'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (1.3ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (73.1ms)
+  Rendered photos/index.html.erb within layouts/application (133.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 173ms (Views: 157.6ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:12 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 12:03:13 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (47.5ms)
+  Rendered photos/index.html.erb within layouts/application (49.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 136ms (Views: 130.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 12:03:20 +0000
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/tags/35" for 127.0.0.1 at 2013-11-29 12:03:22 +0000
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"35"}
+Completed 500 Internal Server Error in 1ms
+
+RuntimeError ({"action"=>"show", "controller"=>"tags", "id"=>"35"}):
+  app/controllers/tags_controller.rb:13:in `show'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.5ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (120.2ms)
+  Rendered photos/index.html.erb within layouts/application (130.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 171ms (Views: 155.6ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 12:04:40 +0000
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/tags/zoom" for 127.0.0.1 at 2013-11-29 12:04:42 +0000
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"zoom"}
+Completed 500 Internal Server Error in 1ms
+
+RuntimeError ({"action"=>"show", "controller"=>"tags", "id"=>"zoom"}):
+  app/controllers/tags_controller.rb:13:in `show'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.0ms)
+  [1m[36mTag Load (1.5ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (74.2ms)
+  Rendered photos/index.html.erb within layouts/application (84.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 123ms (Views: 107.4ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:32 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 12:29:33 +0000
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/tags/wowsers!" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"wowsers!"}
+  [1m[36mTag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."slug" = 'wowsers!' LIMIT 1[0m
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" INNER JOIN "photos_tags" ON "photos"."id" = "photos_tags"."photo_id" WHERE "photos_tags"."tag_id" = $1  [["tag_id", 36]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  Rendered tags/show.html.erb within layouts/application (9.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 47ms (Views: 43.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 12:29:37 +0000
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 12:29:39 +0000
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/tags/zoom" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"zoom"}
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."slug" = 'zoom' LIMIT 1
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos" INNER JOIN "photos_tags" ON "photos"."id" = "photos_tags"."photo_id" WHERE "photos_tags"."tag_id" = $1[0m  [["tag_id", 35]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 2]]
+  Rendered tags/show.html.erb within layouts/application (9.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 47ms (Views: 42.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 12:29:41 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 12:29:43 +0000
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/tags/new" for 127.0.0.1 at 2013-11-29 12:29:44 +0000
+Processing by TagsController#new as HTML
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Photo without an ID):
+  app/controllers/tags_controller.rb:22:in `new'
+
+
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/willbell/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.2ms)
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-11-29 12:29:45 +0000
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m

@@ -1,9 +1,12 @@
-# FactoryGirl.define do
-#   factory :tag do
-#     name "MyString"
-#   end
+FactoryGirl.define do
 
-#   factory :yolo, class: Tag do
-#      name "#YOLO"
-#   end
-# end
+  factory :tag do
+    content "MyString"
+    slug "slug"
+  end
+
+  # factory :beautiful, class: Tag do
+  #    content "BEAUTIFUL!"
+  # end
+  
+end

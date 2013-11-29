@@ -6,15 +6,15 @@ class Photo < ActiveRecord::Base
 
   has_and_belongs_to_many :tags
 
-  def tag_names
-    ''
-  end
+  # def tag_names
+  #   ''
+  # end
 
-  def tag_names=(tags_string)
-    tags_string.split(' ').each do |tag|
-   		self.tags << Tag.create(content: tag)
- 	  end
- 	end
+  # def tag_names=(tags_string)
+  #   tags_string.split(' ').each do |tag|
+  #  		self.tags << Tag.create(content: tag)
+ 	#   end
+ 	# end
 
 end
 

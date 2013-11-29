@@ -3,9 +3,8 @@ Given(/^that there is a photo with caption "(.*?)"$/) do |caption|
 end
 
 Given(/^that there is a photo that has been uploaded$/) do
-  pic = File.open(Rails.root.join('features/images/peas.jpg'))
   @user = create(:user)
-  Photo.new(:caption => 'heavens', user: @user, :pic => pic).save!
+  create(:photo, user: @user)
 end
 
 Then(/^I should see (\d+) photos?$/) do |number|

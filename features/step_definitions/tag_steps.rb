@@ -1,11 +1,8 @@
 Given(/^that there are two photos one tagged "(.*?)" and the other not$/) do |tag_content|
-	pic1 = File.open(Rails.root.join('features/images/cat.jpg'))
-	pic2 = File.open(Rails.root.join('features/images/peas.jpg'))
 	user = create(:user)
-  Photo.new(:caption => 'CAT', user: user, :pic => pic1).save!
-  Photo.new(:caption => 'PEAS', user: user, :pic => pic2, :tags => [Tag.create(content: tag_content)]).save!
-
-  #create(:photo, tags: [create(:tag)])
+	create(:photo, caption: 'CAT', user: user)
+  # create(:photo, caption: 'PEAS', user: user, :tags => [Tag.create(content: tag_content)])
+  create(:photo, caption: 'PEAS', user: user, :tags => [create(:tag, content: tag_content)])
 end
 
 Then(/^I should only see the photo tagged "(.*?)"$/) do |arg1|
