@@ -3,7 +3,7 @@ class ChargesController < ApplicationController
 	before_action :check_admin!, only: [:index]
 
 	def index
-		@charges = Charge.all
+		@orders = Order.all
 	end
 
 	def new

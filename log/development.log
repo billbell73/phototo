@@ -47895,3 +47895,824 @@ NameError (uninitialized constant ChargesController::Order):
   [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131129152342')[0m
   [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131203124828')
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RenameChargeToOrder (20131203164409)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (7.0ms)[0m  [1mDROP TABLE "charges"[0m
+  [1m[35m (5.7ms)[0m  CREATE TABLE "orders" ("id" serial primary key, "description" character varying(255), "photo_id" integer, "user_id" integer) 
+  [1m[36m (0.9ms)[0m  [1mCREATE INDEX "index_orders_on_photo_id" ON "orders" ("photo_id")[0m
+  [1m[35m (2.4ms)[0m  CREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131203164409"]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateOrderRelations (20131203164735)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "photos" ADD COLUMN "order_id" integer[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "user" ADD COLUMN "order_id" integer
+PG::UndefinedTable: ERROR:  relation "user" does not exist
+: ALTER TABLE "user" ADD COLUMN "order_id" integer
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateOrderRelations (20131203164735)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "photos" ADD COLUMN "order_id" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "order_id" integer
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131203164735"]]
+  [1m[35m (2.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateOrderRelations (20131203164735)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.0ms)[0m  ALTER TABLE "users" DROP "order_id"
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "photos" DROP "order_id"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20131203164735'
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (125.3ms)[0m  [1mDROP DATABASE IF EXISTS "instagram_clone_test"[0m
+  [1m[35m (288.5ms)[0m  CREATE DATABASE "instagram_clone_test" ENCODING = 'unicode'
+  [1m[36mSQL (1.8ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (12.1ms)[0m  CREATE TABLE "admins" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.9ms)[0m  [1mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" USING btree ("email")[0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" USING btree ("reset_password_token")
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "likes" ("id" serial primary key, "user_id" integer, "photo_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (3.0ms)[0m  CREATE TABLE "orders" ("id" serial primary key, "description" character varying(255), "photo_id" integer, "user_id" integer) 
+  [1m[36m (2.0ms)[0m  [1mCREATE INDEX "index_orders_on_photo_id" ON "orders" USING btree ("photo_id")[0m
+  [1m[35m (1.1ms)[0m  CREATE INDEX "index_orders_on_user_id" ON "orders" USING btree ("user_id")
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "photos" ("id" serial primary key, "caption" character varying(255), "user_id" integer, "pic_file_name" character varying(255), "pic_content_type" character varying(255), "pic_file_size" integer, "pic_updated_at" timestamp) [0m
+  [1m[35m (1.7ms)[0m  CREATE INDEX "index_photos_on_user_id" ON "photos" USING btree ("user_id")
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "photos_tags" ("photo_id" integer NOT NULL, "tag_id" integer NOT NULL) [0m
+  [1m[35m (2.8ms)[0m  CREATE TABLE "photos_tags_joins" ("id" serial primary key) 
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "content" character varying(255), "created_at" timestamp, "updated_at" timestamp, "slug" character varying(255)) [0m
+  [1m[35m (4.6ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131203164409')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131125122546')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131125160503')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131125194142')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131127081553')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131127190439')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131129103422')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131129152342')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131203124828')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131203131052')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.5ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1[0m  [["photo_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (0.4ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1[0m  [["photo_id", 2]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.5ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.3ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1  [["photo_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.3ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1[0m  [["photo_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (0.9ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1[0m  [["photo_id", 6]]
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 6]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.5ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1  [["photo_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.4ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1  [["photo_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.3ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1  [["photo_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.3ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1  [["photo_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.6ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1  [["photo_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.3ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1  [["photo_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.5ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."photo_id" = $1  [["photo_id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "photos_tags" ON "tags"."id" = "photos_tags"."tag_id" WHERE "photos_tags"."photo_id" = $1  [["photo_id", 13]]
+  Rendered photos/_photo.html.erb (162.4ms)
+  Rendered photos/index.html.erb within layouts/application (231.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 283ms (Views: 252.3ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/charges.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-12-03 18:02:39 +0000
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/photos/3/charges/new" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+Processing by ChargesController#new as HTML
+  Parameters: {"photo_id"=>"3"}
+  [1m[36mPhoto Load (0.8ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  Rendered charges/new.html.erb within layouts/application (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 54ms (Views: 50.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/charges.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-12-03 18:02:43 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started POST "/photos/3/charges" for 127.0.0.1 at 2013-12-03 18:03:15 +0000
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Cfrd2FIY9DLaFpnncWWvpQcNAE+24x05q/h8X+55+8=", "stripeToken"=>"tok_1033UU2QXJPjzNvr5STOQCFj", "stripeEmail"=>"b@c.com", "photo_id"=>"3"}
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "orders" ("description", "photo_id", "user_id") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "Photo print"], ["photo_id", 3], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  Rendered charges/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8555ms (Views: 39.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/charges.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-12-03 18:03:23 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/charges" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+Processing by ChargesController#index as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."id" = 1 ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.4ms)[0m  [1mSELECT "orders".* FROM "orders"[0m
+  Rendered orders/_order.html.erb (0.5ms)
+  Rendered charges/index.html.erb within layouts/application (3.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 60ms (Views: 40.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/charges.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-12-03 18:03:37 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/charges" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+Processing by ChargesController#index as HTML
+  [1m[35mAdmin Load (0.5ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."id" = 1 ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.4ms)[0m  [1mSELECT "orders".* FROM "orders"[0m
+  [1m[35mPhoto Load (0.6ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 ORDER BY "photos"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered orders/_order.html.erb (5.4ms)
+  Rendered charges/index.html.erb within layouts/application (7.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 53ms (Views: 48.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/charges.css?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-12-03 18:04:51 +0000
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/charges" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+Processing by ChargesController#index as HTML
+  [1m[35mAdmin Load (0.5ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."id" = 1 ORDER BY "admins"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.5ms)[0m  [1mSELECT "orders".* FROM "orders"[0m
+  [1m[35mPhoto Load (0.6ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 ORDER BY "photos"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered orders/_order.html.erb (5.8ms)
+  Rendered charges/index.html.erb within layouts/application (10.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 118ms (Views: 114.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/charges.css?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+
+
+Started GET "/websocket" for 127.0.0.1 at 2013-12-03 18:06:13 +0000
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m

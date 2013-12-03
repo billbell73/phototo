@@ -1,6 +1,6 @@
 class Photo < ActiveRecord::Base
   belongs_to :user
-  belongs_to :charge
+  has_many :orders
 
   has_attached_file :pic,
                  styles: { medium: "400x400>", thumb: "200x200>" }
