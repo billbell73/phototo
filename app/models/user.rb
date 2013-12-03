@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
 	has_many :photos
+	has_many :likes
+	has_many :charges
 	
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

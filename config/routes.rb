@@ -1,4 +1,5 @@
 InstagramClone::Application.routes.draw do
+  devise_for :admins
   resources :tags
 
   devise_for :users
@@ -24,7 +25,10 @@ InstagramClone::Application.routes.draw do
 
   resources :photos do
     resources :tags
+    resources :likes
+    resources :charges
   end
+  resources :charges, only: :index
   
   # resources :tags do
   #   resources :photos

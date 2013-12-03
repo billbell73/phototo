@@ -13,3 +13,14 @@ channel.bind 'new', (photo) ->
 	$photo.find('img').attr 'src', photo['image_url']
  
 	$('.photos').append($photo)
+
+
+$ ->
+	$('.button_to').on 'ajax:success', (e, data, status, xhr) ->
+#		console.log(e)
+#		if any like-email within .like-section data.id contains text data.email
+#			$(".like-email=#{").remove()
+#		else
+		$(".like-section[data-id=#{data.id}]").text(data.email)
+#		end
+

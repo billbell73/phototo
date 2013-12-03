@@ -1,10 +1,22 @@
 
 
-<div class='col-md-4'>
+<div class='col-md-4 photo'>
   <h3><%= photo.caption %></h3>
   <%= image_tag photo.pic.url(:thumb), class: 'uploaded-pic' %>
   <br>
   <caption>Uploaded by <%= photo.user.email if photo.user %></caption>
+  <br>
+    <%= button_to "❤", photo_likes_path(photo), class: 'like-button', remote: true %>
+
+
+  <div class="like-section" data-id="<%= photo.id %>">
+    <% photo.likes.each do |like | %>
+      <div class="like-email" data-id="<%= like.id %>">
+        <%= like.user.email %>
+      </div>
+    <% end %>
+  </div>
+
   <br>
   	Tags:
       <%= tag_names(photo) %>
@@ -12,6 +24,8 @@
   <br>
   
   <%= link_to 'Add Tags', new_photo_tag_path(photo) %>
+
+  <%= button_to "Buy Print", new_photo_charge_path(photo), method: :get %>
 
 </div>
 
