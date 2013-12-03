@@ -2673,3 +2673,43 @@ I [2013-12-03 18:06:13.504] [[32mConnectionManager[0m] Connection opened: #<Co
 
 I [2013-12-03 18:06:13.546] [[32mChannel[0m] #<Connection::c6200da743e827335040> subscribed to channel photos
 
+I [2013-12-03 18:47:00.657] [[32mChannel[0m] #<Connection::acb4c17cd1d26cd0ad66> unsubscribed from channel photos
+
+I [2013-12-03 18:47:00.657] [[32mConnectionManager[0m] Connection closed: #<Connection::acb4c17cd1d26cd0ad66>
+
+I [2013-12-03 18:47:00.949] [[32mConnectionManager[0m] Connection opened: #<Connection::d2a7b3b58227b5d829a3>
+
+I [2013-12-03 18:47:01.104] [[32mChannel[0m] #<Connection::d2a7b3b58227b5d829a3> subscribed to channel photos
+
+I [2013-12-03 18:55:52.915] [[32mChannel[0m] #<Connection::d2a7b3b58227b5d829a3> unsubscribed from channel photos
+
+I [2013-12-03 18:55:52.915] [[32mConnectionManager[0m] Connection closed: #<Connection::d2a7b3b58227b5d829a3>
+
+I [2013-12-03 18:55:53.281] [[32mConnectionManager[0m] Connection opened: #<Connection::1ca52e3473da8dc7044c>
+
+I [2013-12-03 18:55:53.304] [[32mChannel[0m] #<Connection::1ca52e3473da8dc7044c> subscribed to channel photos
+
+I [2013-12-03 18:56:11.980] [[32mChannel[0m] #<Connection::1ca52e3473da8dc7044c> unsubscribed from channel photos
+
+I [2013-12-03 18:56:11.980] [[32mConnectionManager[0m] Connection closed: #<Connection::1ca52e3473da8dc7044c>
+
+I [2013-12-03 18:56:12.281] [[32mConnectionManager[0m] Connection opened: #<Connection::00016ac64eab0975473e>
+
+I [2013-12-03 18:56:12.318] [[32mChannel[0m] #<Connection::00016ac64eab0975473e> subscribed to channel photos
+
+I [2013-12-03 18:56:28.195] [[32mChannel[0m] #<Connection::00016ac64eab0975473e> unsubscribed from channel photos
+
+I [2013-12-03 18:56:28.195] [[32mConnectionManager[0m] Connection closed: #<Connection::00016ac64eab0975473e>
+
+I [2013-12-03 18:56:28.452] [[32mConnectionManager[0m] Connection opened: #<Connection::5aaa0f3e4ed395159c07>
+
+I [2013-12-03 18:56:28.550] [[32mChannel[0m] #<Connection::5aaa0f3e4ed395159c07> subscribed to channel photos
+
+I [2013-12-03 18:56:36.145] [[32mChannel[0m] #<Connection::5aaa0f3e4ed395159c07> unsubscribed from channel photos
+
+I [2013-12-03 18:56:36.145] [[32mConnectionManager[0m] Connection closed: #<Connection::5aaa0f3e4ed395159c07>
+
+I [2013-12-03 18:56:36.397] [[32mConnectionManager[0m] Connection opened: #<Connection::e2555b53697763fe0a14>
+
+I [2013-12-03 18:56:36.421] [[32mChannel[0m] #<Connection::e2555b53697763fe0a14> subscribed to channel photos
+

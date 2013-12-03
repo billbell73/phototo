@@ -4,16 +4,14 @@ class LikesController < ApplicationController
 	
 		if current_user.likes.where(photo_id: params[:photo_id]).any?
 			current_user.likes.find_by(photo_id: params[:photo_id]).destroy
-			#redirect_to '/'
-			render json: { id: params[:photo_id], email: current_user.email }
+			destroyed = true
 		else
  	  	@like = Like.create(photo_id: params[:photo_id], user: current_user)
- 	  	render json: { id: params[:photo_id], email: current_user.email }
+ 	  	destroyed = false
  	  end
 
+ 	  render json: { id: params[:photo_id], email: current_user.email, destroyed: destroyed }
 
-		
-		
   end
 	
 end

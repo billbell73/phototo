@@ -17,10 +17,13 @@ channel.bind 'new', (photo) ->
 
 $ ->
 	$('.button_to').on 'ajax:success', (e, data, status, xhr) ->
-#		console.log(e)
-#		if any like-email within .like-section data.id contains text data.email
-#			$(".like-email=#{").remove()
-#		else
-		$(".like-section[data-id=#{data.id}]").text(data.email)
-#		end
+		# if $( ".like-email:contains('data.email') within .like-section data.id contains 
+		# 	$(that ".like-email .remove()
+		# else
+		if data.destroyed
+			# alert('destroyed!')
+			$(".like-section[data-id=#{data.id}]").text('')
+		else
+			$(".like-section[data-id=#{data.id}]").text(data.email)
+		# end
 
