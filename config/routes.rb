@@ -23,12 +23,19 @@ InstagramClone::Application.routes.draw do
   
   # resources :photos
 
+  # constraints subdomain: 'api' do
+  namespace :api, defaults: { format: :json } do
+    resources :photos
+  end
+  # end 
+
   resources :photos do
     resources :tags
     resources :likes
     resources :charges
   end
   resources :charges, only: :index
+
   
   # resources :tags do
   #   resources :photos

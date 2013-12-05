@@ -1,5 +1,9 @@
 <h1>Photos</h1>
-<div class='row photos'>
-  <%= render @photos %>
+<div class='photos'>
+	<% @photos.in_groups_of(3, false) do |photo_row| %>
+		<div class='row'>
+		  <%= render photo_row %>
+		 </div>
+	<% end %>
 </div>
 <%= link_to 'Upload photo', new_photo_path %>

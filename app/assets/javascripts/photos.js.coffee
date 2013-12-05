@@ -14,16 +14,13 @@ channel.bind 'new', (photo) ->
  
 	$('.photos').append($photo)
 
+likeTemplate = (data) ->
+	"<div class='like-email' data-id=#{data.id}> #{data.user.email} </div>"
 
 $ ->
 	$('.button_to').on 'ajax:success', (e, data, status, xhr) ->
-		# if $( ".like-email:contains('data.email') within .like-section data.id contains 
-		# 	$(that ".like-email .remove()
-		# else
 		if data.destroyed
-			# alert('destroyed!')
-			$(".like-section[data-id=#{data.id}]").text('')
+			$(".like-email[data-id=#{data.id}]").text('')
 		else
-			$(".like-section[data-id=#{data.id}]").text(data.email)
-		# end
-
+			
+			$(".like-section[data-id=#{data.photo_id}]").append likeTemplate(data)

@@ -53,6 +53,7 @@ group :test, :development do
    gem 'launchy'
    gem "factory_girl_rails"
    gem 'selenium-webdriver'
+   gem 'capybara-email'
 end
 
 group :production do

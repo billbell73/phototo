@@ -1,16 +1,25 @@
 class LikesController < ApplicationController
 
 	def create
-	
-		if current_user.likes.where(photo_id: params[:photo_id]).any?
-			current_user.likes.find_by(photo_id: params[:photo_id]).destroy
-			destroyed = true
-		else
- 	  	@like = Like.create(photo_id: params[:photo_id], user: current_user)
- 	  	destroyed = false
- 	  end
+		like_json = Like.toggle_like(current_user, params[:photo_id])
+		
+		render json: like_json
 
- 	  render json: { id: params[:photo_id], email: current_user.email, destroyed: destroyed }
+		# like = current_user.likes.where(photo_id: params).first
+	
+		# if like
+		# 	like_id = like.id
+		# 	like.destroy
+		# 	destroyed = true
+		# else
+ 	#   	@like = Like.create(photo_id: params[:photo_id], user: current_user)
+ 	#   	like_id = @like.id
+ 	#   	destroyed = false
+ 	#   end
+
+ 	  # puts "destroyed: #{destroyed}"
+
+ 	  # render json: { photo_id: params[:photo_id], like_id: like_id, email: current_user.email, destroyed: destroyed }
 
   end
 	
