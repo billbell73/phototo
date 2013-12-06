@@ -6,13 +6,17 @@ class PhotosController < ApplicationController
 		@photos = Photo.all
 	end
 
+	def show
+		@photo = Photo.find(params[:id])
+	end
+
 	def new
 		@photo = Photo.new
 	end
 
 	def create
 		#raise params.inspect
-		@photo = current_user.photos.build(params[:photo].permit(:caption, :pic, :tag_names))
+		@photo = current_user.photos.build(params[:photo].permit(:caption, :pic, :tag_names, :location))
 
     if @photo.save
       flash[:notice] = 'Photo added'

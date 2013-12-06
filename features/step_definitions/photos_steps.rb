@@ -22,6 +22,10 @@ Then(/^I should see a photo$/) do
  	expect(pic['alt']).not_to eq 'Missing'
 end
 
+Then(/^I should see that image and a location map for that image$/) do
+  expect(page).to have_css 'image'
+end
+
 Given(/^I am logged in and on the upload photo form$/) do
   login_as(create(:user), :scope => :user)
   visit('/photos/new')

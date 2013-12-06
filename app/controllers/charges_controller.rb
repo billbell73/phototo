@@ -7,7 +7,7 @@ class ChargesController < ApplicationController
 	end
 
 	def new
-		@photo = Photo.find(params[:photo_id])
+		@photo = Photo.find(params[:id])
 	end
 
 	def create

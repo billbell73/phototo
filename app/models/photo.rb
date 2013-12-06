@@ -10,6 +10,9 @@ class Photo < ActiveRecord::Base
   has_many :likes
   has_many :users, :through => :likes
 
+  geocoded_by :location
+  after_validation :geocode
+
   # def tag_names
   #   ''
   # end

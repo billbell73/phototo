@@ -10,6 +10,12 @@ Given that there is a photo that has been uploaded
 When I am on the homepage
 Then I should see a photo
 
+Scenario: viewing image and location map
+Given that there is a photo that has been uploaded
+When I am on the homepage
+And I follow "Location of photo"
+Then I should see that image and a location map for that image
+
 Scenario: posting/uploading photos
 Given I am logged in and on the upload photo form
 And I fill in "Caption" with "Blah"

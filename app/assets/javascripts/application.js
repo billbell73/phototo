@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require gmaps
 //= require twitter/bootstrap
 //= require websocket_rails/main
 //= require_tree .

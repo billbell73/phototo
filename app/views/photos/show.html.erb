@@ -1,0 +1,15 @@
+<div class='col-md-4'>
+      <h3><%= @photo.caption %></h3>
+      <%= image_tag @photo.pic.url(:thumb), class: 'uploaded-pic' %>
+      <br>
+      <caption>Uploaded by <%= @photo.user.email if @photo.user %></caption>
+      <p>Tags:
+        <%= tag_names(@photo) %>
+      </p>
+</div>
+
+<span>
+	<h3>Location of photo</h3>
+	<!-- <div id='map' data-lat="<%= @photo.latitude %>" data-lng="<%= @photo.longitude %>"> </div> -->
+	<div id='map' data-id="<%= @photo.id %>" </div> 
+<span>
