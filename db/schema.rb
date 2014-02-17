@@ -69,9 +69,6 @@ ActiveRecord::Schema.define(version: 20131205154728) do
     t.integer "tag_id",   null: false
   end
 
-  create_table "photos_tags_joins", force: true do |t|
-  end
-
   create_table "tags", force: true do |t|
     t.string   "content"
     t.datetime "created_at"

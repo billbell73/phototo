@@ -3,7 +3,9 @@ class Photo < ActiveRecord::Base
   has_many :orders
 
   has_attached_file :pic,
-                 styles: { medium: "400x400>", thumb: "200x200>" }
+                 styles: { medium: "400x400>", 
+                            compact: "300x300>",
+                            thumb: "200x200>" }
 
   has_and_belongs_to_many :tags
 

@@ -3,7 +3,7 @@
 <div class='col-md-4 photo'>
   <h3><%= photo.caption %></h3>
   <%= link_to photo_path(photo) do %>
-    <%= image_tag(photo.pic.url(:thumb), class: 'uploaded-pic') %>
+    <%= image_tag(photo.pic.url(:medium), class: 'uploaded-pic') %>
   <% end %>
   <br>
   <caption>Uploaded by <%= photo.user.email if photo.user %></caption>
