@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Phototo::Application.config.secret_key_base = 'fd0fb9ad4d528339608e1cf148187779272e35db872c6490b2e791eea5364b983de48084366fe08e925041e67926b6de7bd6bc38f9785485569d03f4f5ec0d48'
+Phototo::Application.config.secret_key_base = ENV['PHOTOTO_COOKIE_KEY']
