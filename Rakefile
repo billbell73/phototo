@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-InstagramClone::Application.load_tasks
+Phototo::Application.load_tasks

@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-InstagramClone::Application.config.session_store :cookie_store, key: '_instagram_clone_session'
+Phototo::Application.config.session_store :cookie_store, key: '_phototo_session'

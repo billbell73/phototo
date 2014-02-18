@@ -1,4 +1,4 @@
-InstagramClone::Application.routes.draw do
+Phototo::Application.routes.draw do
   devise_for :admins
   resources :tags
 
