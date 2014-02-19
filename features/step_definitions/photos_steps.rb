@@ -8,8 +8,6 @@ Given(/^that there is a photo that has been uploaded$/) do
 end
 
 Then(/^I should see (\d+) photos?$/) do |number|
-  # pic = page.find 'img.uploaded-pic'
- 	# expect(pic['alt']).not_to eq 'Missing'
  	expect(page).to have_css 'img.uploaded-pic', count: number
 end
 
@@ -22,8 +20,8 @@ Then(/^I should see a photo$/) do
  	expect(pic['alt']).not_to eq 'Missing'
 end
 
-Then(/^I should see that image and a location map for that image$/) do
-  expect(page).to have_css 'image'
+Then(/^I should see a location map for that image$/) do
+  expect(page).to have_css '.gm-style'
 end
 
 Given(/^I am logged in and on the upload photo form$/) do

@@ -24,6 +24,8 @@
   	Tags:
       <%= tag_names(photo) %>
   <br>
+
+  <%= link_to "Location", photo_path(photo) %>
   
   <%= link_to 'Add Tags', new_photo_tag_path(photo) %>
 
