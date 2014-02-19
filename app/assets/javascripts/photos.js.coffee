@@ -14,11 +14,11 @@ channel.bind 'new', (photo) ->
 
 	$('.photos').append($photo)
 
+
 likeTemplate = (data) ->
 	"<div class='like-email' data-id=#{data.id}> #{data.user.email} </div>"
 
 $ ->
-
 
 	$('.button_to').on 'ajax:success', (e, data, status, xhr) ->
 		if data.destroyed
@@ -27,37 +27,18 @@ $ ->
 			$(".like-section[data-id=#{data.photo_id}]").append likeTemplate(data)
 
 
-	# new GMaps
-	#   div: '#map',
-	#   lat: -12.043333,
-	#   lng: -77.028333
-
-	# $('#map').attr('data-id')
-	# $('#map').data('id')
-
-	# map = new GMaps
-	# 	div: '#map',
-	# 	lat: parseFloat($('#map').data('lat')),
-	# 	lng: parseFloat($('#map').data('lng'))
-
-	# map.addMarker
-	# 	lat: parseFloat($('#map').data('lat')),
-	# 	lng: parseFloat($('#map').data('lng'))
-
-# $ ->
-
-
 	id = $('#map').data('id')
+	
+	if id
+		$.get "/api/photos/#{id}", (photo) ->
+			map = new GMaps
+				div: '#map',
+				lat: photo.latitude,
+				lng: photo.longitude
 
-	$.get "/api/photos/#{id}", (photo) ->
-		map = new GMaps
-			div: '#map',
-			lat: photo.latitude,
-			lng: photo.longitude
-
-		map.addMarker
-			lat: photo.latitude,
-			lng: photo.longitude
+			map.addMarker
+				lat: photo.latitude,
+				lng: photo.longitude
 
 
 
