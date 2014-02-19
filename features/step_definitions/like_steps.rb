@@ -1,9 +1,3 @@
-Given(/^there is a photo that I have liked$/) do
-  user = create(:user, email: "a@b.com")
-  photo = create(:photo, user: @user)
-  create(:like, user_id: @user.id, photo_id: photo.id)
-end
-
 Given(/^there are two photos that I have liked$/) do
 	user = create(:user, email: "a@b.com")
   photo = create(:photo, user: user)
@@ -22,4 +16,8 @@ end
 
 Then(/^I will only see "(.*?)" once in a "(.*?)"$/) do |email, classname|
   expect(page.all(".#{classname}", text: email).count).to eq 1
+end
+
+Given /^I wait for (\d+) seconds?$/ do |n|
+  sleep(n.to_i)
 end

@@ -20,12 +20,3 @@ And I fill in "Password" with "qwertyui"
 When I press "Sign in"
 Then I should see "Signed in as willbell@gmail.com"
 
-Scenario: Log out
-Given there is a user with email "willbell@gmail.com" and password "qwertyui"
-And I follow "Sign in"
-And I fill in "Email" with "willbell@gmail.com"
-And I fill in "Password" with "qwertyui"
-And I press "Sign in"
-#When I follow "Sign out"
-#Then I should see "Signed out successfully"
-
