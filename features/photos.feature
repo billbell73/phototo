@@ -14,7 +14,7 @@ Then I should see a photo
 Scenario: viewing image and location map
 Given that there is a photo that has been uploaded
 When I am on the homepage
-And I follow "Location"
+And I follow "Photo location"
 Then I should see a location map for that image
 
 Scenario: posting/uploading photos

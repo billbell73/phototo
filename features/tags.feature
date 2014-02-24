@@ -4,7 +4,7 @@ Scenario: Separated Tags
 Given that there is a photo that has been uploaded
 And I am a new, authenticated user with email "willbell@gmail.com" and password "qwertyui"
 And I am on the homepage
-And I follow "Add Tags"
+And I follow "Add Tag"
 When I fill in "Tags" with "#YOLO #BOLO"
 And I press "Create Tag"
 Then I should see "#YOLO, #BOLO"
