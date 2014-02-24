@@ -1,0 +1,19 @@
+.upload {
+	float: right;
+	padding-top: 15px;
+}
+
+.like-email {
+	display: inline;
+	margin-right: 5px;
+	margin-left: 2px;
+}
+
+.like-section, .button_to, .button_to div  {
+	display: inline;
+}
+
+.foot {
+	text-decoration: underline;
+	margin-right: 8px;
+}

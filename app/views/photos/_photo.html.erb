@@ -2,12 +2,12 @@
 
 <div class='col-md-4 photo'>
   <h3><%= photo.caption %></h3>
-  <caption>From <%= photo.user.email if photo.user %></caption>
+  
   <%= link_to photo_path(photo) do %>
     <%= image_tag(photo.pic.url(:medium), class: 'uploaded-pic') %>
   <% end %>
   <br>
-  
+  <caption>Uploaded by <%= photo.user.email if photo.user %></caption>
   <br>
     <%= button_to "❤", photo_likes_path(photo), class: 'like-button', remote: true %>
 
@@ -25,11 +25,11 @@
       <%= tag_names(photo) %>
   <br>
 
-  <%= link_to "Location", photo_path(photo) %>
-  
-  <%= link_to 'Add Tags', new_photo_tag_path(photo) %>
+  <%= link_to 'Add Tag', new_photo_tag_path(photo), class: "foot" %>
 
-  <%= link_to "Buy Print", new_photo_charge_path(photo) %>
+  <%= link_to "Photo location", photo_path(photo), class: "foot" %>
+
+  <%= link_to "Buy Print", new_photo_charge_path(photo), class: "foot" %>
 
 </div>
 
