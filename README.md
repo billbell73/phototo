@@ -1,6 +1,6 @@
 #Phototo
-===============
-[Website via Heroku](http://phototo.herokuapp.com)
+
+Visit deployed project [website](http://phototo.herokuapp.com) hosted on Heroku
 
 ##Description
 
@@ -13,6 +13,7 @@ Photo-sharing app with liking, tagging, location maps, ability to "buy" print th
 * Ajax 
 * JSON API for GMaps 
 * Websockets 
+* Devise
 * Stripe 
 * Mailgun 
 * RSpec 
