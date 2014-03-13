@@ -1,10 +1,10 @@
 #Phototo
 
-Visit deployed project [website](http://phototo.herokuapp.com) hosted on Heroku
+Visit [website](http://phototo.herokuapp.com) of deployed project hosted on Heroku.
 
 ##Description
 
-Photo-sharing app with liking, tagging, location maps, ability to "buy" print through Stripe test account, email purchase confirmation, administrator access to orders 
+Photo-sharing app with liking, tagging, location maps, ability to "buy" print through Stripe test account, email purchase confirmation, administrator access to orders.
 
 
 ##Technology 
